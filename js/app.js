@@ -72,23 +72,35 @@ function renderThreeProducts(){
     currentRight.renderProduct(rightImageElem, rightImageh2Elem);
 }
 //render results
+//we need li's product name and product clicks
+function renderResults(){
+    ulElem.textContent = '';
+
+    for (let product of Product.allProducts) {
+        let liElem = document.createElement('li');
+        liElem.textContent = `${product.name}: ${product.votes}: ${product.views}`;
+        ulElem.appendChild(liElem);
+    }
+}
+
 
 //click handler
 
 function handleClick(e) {
+    // e.preventDefault(); <--DO I NEED THIS?
     const target = e.target.id;
     if (target==='left_image' || target === 'right_image' || target === 'center_image') {
         //updatevoterounds
         rounds--;
               //determine their choise and update the votes on the
         if (target === 'left_image') {
-            currentLeft.clicks++
+            currentLeft.votes++;
         }
         if (target === 'right_image') {
-            currentRight.clicks++
+            currentRight.votes++;
         }
         if (target === 'center_image') {
-            currentCenter.click++
+            currentCenter.votes++;
         }
 
         picksThreeProducts();
@@ -96,9 +108,10 @@ function handleClick(e) {
     }
         if (rounds === 0) {
         voteSelectionElem.removeEventListener('click', handleClick);
+        renderResults();
         }
 }
-function renderButton
+// function renderButton
 
 
 //--------------------------Listeners---------------------------//
@@ -151,38 +164,38 @@ console.log(Product.allProducts);
 //         }
 //     }
 
-// const ctx = document.getElementById('myChart');
-// const myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [colorArray
-//                 // 'rgba(255, 99, 132, 0.2)',
-//                 // 'rgba(54, 162, 235, 0.2)',
-//                 // 'rgba(255, 206, 86, 0.2)',
-//                 // 'rgba(75, 192, 192, 0.2)',
-//                 // 'rgba(153, 102, 255, 0.2)',
-//                 // 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [colorArray
-//                 // 'rgba(255, 99, 132, 1)',
-//                 // 'rgba(54, 162, 235, 1)',
-//                 // 'rgba(255, 206, 86, 1)',
-//                 // 'rgba(75, 192, 192, 1)',
-//                 // 'rgba(153, 102, 255, 1)',
-//                 // 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true
-//             }
-//         }
-//     }
-// });
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [''Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange''],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
