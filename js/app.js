@@ -84,6 +84,7 @@ function renderResults(){
 }
 
 
+
 //click handler
 
 function handleClick(e) {
@@ -143,35 +144,34 @@ Product.allProducts.push(new Product("wine-glass", "./img/assets/wine-glass.jpg"
 picksThreeProducts();
 renderThreeProducts();
 console.log(Product.allProducts);
+makeProductChart():
 
 //---------------------chart-------------------------------//
-// function makeProductChart() {
-//     var ctx = document.getElementById('').getcontext('');
-//     let productName = [];
-//     let productVotes = [];
-//     let colorArray = [];
+         
+function makeProductChart() {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    let productName = [];
+    let productVotes = [];
+    for (let product of Product.allProduct) {
+        productName.push(product.name)
+        productVotes.push(product.votes)
+        }
+}   
 
-//     for   {
-//     productName.push(product.name)
-//     productVotes.push(product.name)
-//     }
+for (let i = 0; i <Product.allProducts; i++) {
+    if(i % )
+}
 
-//     for (let i = 0; i < product.allProducts.length; i++) {
-//         if(i % 2 === 0) {
-//             colorArray.push('blue');
-//         } else {
-//             colorArray.push('pink')
-//         }
-//     }
+const data = [1,2,3,4,5,6];
+const labelColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
 
-var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: [''Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange''],
+        labels: labelColors,
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
