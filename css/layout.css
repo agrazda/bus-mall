@@ -15,6 +15,9 @@ main * {
 #A {
     grid-column: 1 / 5;
     grid-row: 1 / 2;
+    background-color: black;
+    Border: 2px solid red;
+    margin-left: 10px;
 }
 
 #B {
@@ -63,14 +66,16 @@ main * {
 }
 
 button {
-    width: 760px;
+    width: 750px;
     height: 60px;
-    background-color: chocolate;
+    background-color: red;
     border-radius: 4px;
 }
 
 
 img {
-    max-width: 200px;
-    max-height: 200px;
+    width: 200px;
+    height: 200px;
+    margin-left: 15px;
+    
 }

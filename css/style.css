@@ -1,8 +1,11 @@
 main {
-    background-color: cornsilk;
+    background-color:darkslategray;
+    color: white ;
+    text-shadow: teal 1px;
+    margin-left: 100px;
 }
 /* 
 img {
-    max-width: 250px;
-    max-height: 200px;
+    width: 250px;
+    height: 200px;
 } */

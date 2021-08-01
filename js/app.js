@@ -144,23 +144,21 @@ Product.allProducts.push(new Product("wine-glass", "./img/assets/wine-glass.jpg"
 picksThreeProducts();
 renderThreeProducts();
 console.log(Product.allProducts);
-makeProductChart():
+
 
 //---------------------chart-------------------------------//
          
 function makeProductChart() {
     var ctx = document.getElementById('myChart').getContext('2d');
-    let productName = [];
-    let productVotes = [];
+    let name = [];
+    let votes = [];
     for (let product of Product.allProduct) {
-        productName.push(product.name)
-        productVotes.push(product.votes)
+        name.push(Product.name)
+        votes.push(Product.votes)
         }
 }   
 
-for (let i = 0; i <Product.allProducts; i++) {
-    if(i % )
-}
+
 
 const data = [1,2,3,4,5,6];
 const labelColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
@@ -197,5 +195,8 @@ var myChart = new Chart(ctx, {
                 beginAtZero: true
             }
         }
+    
     }
 });
+
+makeProductChart ();
